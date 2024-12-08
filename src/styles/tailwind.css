@@ -1,0 +1,8 @@
+/* src/styles/tailwind.css */
+.card {
+  @apply bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-300 dark:border-gray-600 hover:shadow-md transition-shadow duration-200;
+}
+
+.primary-button {
+  @apply flex items-center p-2 rounded-lg transition-colors bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 border border-blue-300 dark:border-blue-900;
+}

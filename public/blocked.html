@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay Focused! - DevFlow</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="max-w-lg w-full mx-4">
+    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+      <div class="mb-6">
+        <img src="icons/icon.svg" alt="DevFlow Logo" class="w-24 h-24 mx-auto">
+      </div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">Stay Focused!</h1>
+      <p class="text-gray-600 mb-6">
+        This site is currently blocked to help you maintain focus. Remember why you set this restriction and stay productive!
+      </p>
+      <div class="space-y-4">
+        <button
+          id="goBack"
+          class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors w-full"
+        >
+          Go Back
+        </button>
+        <button
+          id="openDevFlow"
+          class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors w-full"
+        >
+          Open DevFlow
+        </button>
+      </div>
+    </div>
+    <div class="mt-6 text-center">
+      <p class="text-sm text-gray-500">
+        You can manage blocked sites in the DevFlow extension settings.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('goBack').addEventListener('click', () => {
+      window.history.back()
+    })
+
+    document.getElementById('openDevFlow').addEventListener('click', () => {
+      chrome.runtime.sendMessage({ action: 'openDevFlow' })
+    })
+  </script>
+</body>
+</html>

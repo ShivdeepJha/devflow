@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "DevFlow",
+  "version": "1.0.0",
+  "description": "A Productivity Chrome Extension for Front-End Developers",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webNavigation",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_icon": "icons/icon.svg"
+  },
+  "icons": {
+    "128": "icons/icon.svg"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "onboarding.html", "icons/*", "index.html", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
